@@ -39,7 +39,7 @@ const Header = () => {
       <div className="flex gap-2 md:order-2">
         <Button
           onClick={() => dispatch(toggleTheme())}
-          className="w-12 h-10 hidden lg:inline"
+          className="w-12 h-10"
           color="gray"
           pill
         >
