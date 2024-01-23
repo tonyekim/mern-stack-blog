@@ -76,7 +76,7 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email });
     if (user) {
-      const token = jwt.sign({ id: user._id }, "tonyekim");
+      const token = jwt.sign({ id: user._id ,  isAdmin: user.isAdmin}, "tonyekim");
       const { password, ...rest } = user._doc;
       res
         .status(200)
@@ -98,7 +98,7 @@ export const google = async (req, res, next) => {
       });
 
       await newUser.save();
-      const token = jwt.sign({id: newUser._id}, "tonyekim" );
+      const token = jwt.sign({id: newUser._id, isAdmin: newUser.isAdmin}, "tonyekim" );
       const {password, ...rest} = newUser._doc;
       res
         .status(200)
