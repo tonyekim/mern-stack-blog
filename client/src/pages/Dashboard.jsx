@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import DashSidebar from "../components/DashSidebar";
 import DashProfile from "../components/DashProfile";
 import { set } from "mongoose";
+import DashPost from "../components/DashPost";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -26,8 +27,7 @@ const Dashboard = () => {
       </div>
 
       {tab === "profile" && <DashProfile />}
-
-      {/* profile */}
+      {tab === "posts" && <DashPost />}
     </div>
   );
 };
