@@ -4,6 +4,7 @@ import DashSidebar from "../components/DashSidebar";
 import DashProfile from "../components/DashProfile";
 import { set } from "mongoose";
 import DashPost from "../components/DashPost";
+import DashUsers from "../components/DashUsers";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const Dashboard = () => {
 
       {tab === "profile" && <DashProfile />}
       {tab === "posts" && <DashPost />}
+      {tab === "users" && <DashUsers />}
     </div>
   );
 };
